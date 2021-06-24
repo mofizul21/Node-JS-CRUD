@@ -1,0 +1,21 @@
+<% employess.forEach(function(item){ %>
+<tr>
+    <td>
+        <span class="custom-checkbox">
+            <input type="checkbox" id="checkbox<%= item._id %>" name="options[]" value="1">
+            <label for="checkbox<%= item._id %>"></label>
+        </span>
+    </td>
+    <td><%= item.name %></td>
+    <td><%= item.email %></td>
+    <td><%= item.address %></td>
+    <td><%= item.phone %></td>
+    <td>
+        <a href="/edit-employee?id=<%= item._id %>" class="edit"><i class="material-icons"></i></a>
+        <!-- <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip"></i></a> -->
+
+        <a href="#" id="btn-confirm_<%= item._id %>" class="delete" data-id=<%= item._id %>><i class="material-icons"></i></a>
+        <!-- <a href="#deleteEmployeeModal" class="delete" data-toggle="modal" data-id=<%= item._id %>><i class="material-icons" data-toggle="tooltip"></i></a> -->
+    </td>
+</tr>
+<% }) %>
